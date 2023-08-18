@@ -23,3 +23,19 @@ void initSqList(SqList *L, int *arr, int length)
     }
     L->length = length;
 }
+
+void inverseSqList(SqList *L, int start, int end)
+{
+    if (start < 0 || end > L->length - 1 || start >= end)
+    {
+        printf("Invalid start or end.\n");
+        return;
+    }
+    int temp;
+    for (int i=0; i<(end-start+1)/2; i++)
+    {
+        temp = L->data[start+i];
+        L->data[start+i] = L->data[end-i];
+        L->data[end-i] = temp;
+    }
+}
