@@ -1,40 +1,40 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "cppbuild",
-			"label": "build",
-			"command": "C:\\TDM-GCC-64\\bin\\gcc.exe",
-			"args": [
-				"-fdiagnostics-color=always",
-				"${file}",
-				"${workspaceFolder}\\include\\*.c",
-				"-o",
-				"${fileDirname}\\bin\\${fileBasenameNoExtension}.exe",
-				"-I",
-				"${workspaceFolder}\\include"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": {
-				"kind": "test",
-				"isDefault": false
-			},
-			"detail": "compiler: C:\\TDM-GCC-64\\bin\\gcc.exe"
-		},
-		{
-			"label": "run",
-			"type": "shell",
-			"dependsOn": "build",
-			"command": "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe",
-			"group": {
-				"kind": "test",
-				"isDefault": true
-			}
-		}
-	]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "build",
+            "command": "C:\\TDM-GCC-64\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "${file}",
+                "${workspaceFolder}\\include\\*.c",
+                "-o",
+                "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe",
+                "-I",
+                "${workspaceFolder}\\include",
+                "-g",
+                "-Wall",
+                
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "compiler: C:\\TDM-GCC-64\\bin\\gcc.exe"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "dependsOn": "build",
+            "command": "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
 }
