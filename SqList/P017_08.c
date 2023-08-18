@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 #include "SqList.h"
 
 void swapSequence(SqList *L, int i, int j)
