@@ -39,3 +39,9 @@ void inverseSqList(SqList *L, int start, int end)
         L->data[end-i] = temp;
     }
 }
+
+void destroySqList(SqList *L)
+{
+    free(L->data);
+    L->length = 0;
+}
