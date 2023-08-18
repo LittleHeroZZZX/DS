@@ -13,9 +13,10 @@
                 "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe",
                 "-I",
                 "${workspaceFolder}\\include",
+                "-std=c17",
                 "-g",
                 "-Wall",
-                
+
             ],
             "options": {
                 "cwd": "${fileDirname}"
