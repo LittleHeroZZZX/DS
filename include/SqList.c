@@ -17,6 +17,7 @@ void showSqList(SqList L)
 void initSqList(SqList *L, int *arr, int length)
 {
     int i;
+    L->data = (int *)malloc(sizeof(int) * length);
     for (i = 0; i < length; i++)
     {
         L->data[i] = arr[i];
