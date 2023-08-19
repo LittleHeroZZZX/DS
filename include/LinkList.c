@@ -29,7 +29,6 @@ Linklist initListByArray(int *data, int n)
     {
         insertDataByNode(prev, data[i]);
         l->data++;
-        prev = prev->next;
     }
     return l;
 }
@@ -71,6 +70,7 @@ void insertDataByNode(LNode *prev, int data)
 void insertNodeByNode(LNode *prev, LNode *node)
 {
     // 调用后需要手动修改length
+    node->next = prev->next;
     prev->next = node;
 }
 
