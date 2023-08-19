@@ -21,6 +21,19 @@ LNode *initNode(int data)
     return node;
 }
 
+Linklist initListByArray(int *data, int n)
+{
+    Linklist l = initList();
+    LNode *prev = l;
+    for (int i=0; i<n; i++)
+    {
+        insertDataByNode(prev, data[i]);
+        l->data++;
+        prev = prev->next;
+    }
+    return l;
+}
+
 void insertDataByIndex(Linklist l, int data, int index)
 {
     LNode* node = initNode(data);
@@ -59,4 +72,14 @@ void insertNodeByNode(LNode *prev, LNode *node)
 {
     // 调用后需要手动修改length
     prev->next = node;
+}
+
+void showList(Linklist l)
+{
+    while (l->next)
+    {
+        printf("%d ", l->next->data);
+        l = l->next;
+    }
+    printf("\n");
 }
