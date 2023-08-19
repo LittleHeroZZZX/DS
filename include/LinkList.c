@@ -29,6 +29,7 @@ Linklist initListByArray(int *data, int n)
     {
         insertDataByNode(prev, data[i]);
         l->data++;
+        prev = prev->next;
     }
     return l;
 }
